@@ -1,0 +1,33 @@
+name: AWS Integration Request
+description: Request to integrate Spacelift with your AWS account
+title: "[Integration Request]: Request to integrate Spacelift with my AWS account"
+labels: ["aws-integration-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Spacelift Integration Request
+        Please provide the following details to request integration of Spacelift with your AWS account.
+  - type: input
+    id: aws-account-id
+    attributes:
+      label: AWS Account ID
+      description: Enter the AWS Account ID which you want to integrate Spacelift with.
+      placeholder: e.g., 123456789012
+    validations:
+      required: true
+  - type: checkboxes
+    id: iam-role-confirmation
+    attributes:
+      label: IAM Role Confirmation
+      description: By submitting this request, you confirm that the provided AWS Account already has a correctly setup IAM role named `arn:aws:iam::{account_id}:role/Spacelift`.
+      options:
+        - label: I confirm
+          required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Please provide any additional details or requirements related to this integration.
+    validations:
+      required: false
